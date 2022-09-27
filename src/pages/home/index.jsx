@@ -3,7 +3,7 @@ import { useStoreActions, useStoreState } from 'easy-peasy'
 import PlaylistCardItem from '../../components/playlistcarditem'
 import PlaylistAddCheckOutlinedIcon from '@mui/icons-material/PlaylistAddCheckOutlined'
 import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined'
-import RestoreSharpIcon from '@mui/icons-material/RestoreSharp';
+import RestoreSharpIcon from '@mui/icons-material/RestoreSharp'
 
 const playlistID = 'PL_XxuZqN0xVD0op-QDEgyXFA4fRPChvkl'
 
@@ -23,26 +23,30 @@ const HomePage = () => {
           <PlaylistAddCheckOutlinedIcon />
           <h3 className='sec-head-title'>Playlists</h3>
         </div>
-        <ul className='card-sec'>
-          {Object.keys(playlists.data).map(function (keyName, keyIndex) {
-            let item = playlists.data[keyName]
-            return (
-              <li className='card' key={keyName}>
-                {
-                  <PlaylistCardItem
-                    key={item.playlistId}
-                    playlistId={item.playlistId}
-                    playlistThumbnail={item.playlistThumbnail}
-                    playlistTitle={item.playlistTitle}
-                    channelTitle={item.channelTitle}
-                    videoId={item.playlistItems[0].contentDetails.videoId}
-                  />
-                }
-                {/* {console.log(playlists[keyName])} */}
-              </li>
-            )
-          })}
-        </ul>
+        {!playlists.data ? (
+          <div>There is No Playlist Added Yet</div>
+        ) : (
+          <ul className='card-sec'>
+            {Object.keys(playlists.data).map(function (keyName, keyIndex) {
+              let item = playlists.data[keyName]
+              return (
+                <li className='card' key={keyName}>
+                  {
+                    <PlaylistCardItem
+                      key={item.playlistId}
+                      playlistId={item.playlistId}
+                      playlistThumbnail={item.playlistThumbnail}
+                      playlistTitle={item.playlistTitle}
+                      channelTitle={item.channelTitle}
+                      videoId={item.playlistItems[0].contentDetails.videoId}
+                    />
+                  }
+                  {/* {console.log(playlists[keyName])} */}
+                </li>
+              )
+            })}
+          </ul>
+        )}
       </div>
       <div>
         <div className='sec-head'>
@@ -73,10 +77,10 @@ const HomePage = () => {
         </ul>
       </div>
       <div>
-<div className='sec-head'>
-      <RestoreSharpIcon/>
-        <h3 className='sec-head-title '>Recent Playlists</h3>
-       </div>
+        <div className='sec-head'>
+          <RestoreSharpIcon />
+          <h3 className='sec-head-title '>Recent Playlists</h3>
+        </div>
         <ul className='card-sec'>
           {recents &&
             recents.items?.map((u, i) => {

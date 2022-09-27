@@ -88,7 +88,7 @@ li{
     padding:20px;
     font-family:Roboto;
     display:flex;
-    background-color: rgb(238, 252, 255);
+    background-color: rgb(255, 255, 255);
 
 }
 
@@ -112,7 +112,7 @@ li{
     margin: 20px;
     border-radius: 10px;
     background-color: rgb(255, 255, 255);
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -1px, rgba(0, 0, 0, 0.3) 0px 18px 36px -1px;
 }
 
 .img{
