@@ -101,6 +101,8 @@ const HomePage = () => {
                     {/* {console.log(playlists[keyName])} */}
                   </li>
                 )
+              } else {
+                return <div>''</div>
               }
             })}
         </ul>
